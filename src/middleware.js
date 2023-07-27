@@ -8,8 +8,7 @@ export default async function VerifyToken(req) {
     await jwtVerify(Token, secretKey)
     return NextResponse.next()
   } catch (err) {
-    console.log(err);
-    return NextResponse.redirect(`${process.env.MODE === "dev" ? "http://localhost:3000/Auth/Signin" : "" }`)
+    return NextResponse.redirect(`${process.env.MODE === "dev" ? "http://localhost:3000/Auth/Signin" : "https://crud-fuso.onrender.com/Auth/Signin" }`)
   }
 }
 
